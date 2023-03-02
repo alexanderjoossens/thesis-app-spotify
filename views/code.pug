@@ -1,0 +1,16 @@
+extends layout.pug
+    
+block content
+    script(src='/js/script.js' defer='')
+
+    //- hh Welcome #{first_name}!
+    //-   img(src=user.images[0].url, class='circular_image')
+    header_code Please enter your unique code: 
+    br
+    form(action='/code', method='POST')
+      p_center
+        | Unique code: 
+        input(type="text", name="code", placeholder="e.g. code123")
+      .center_button
+        button(type='submit', id="code_button") Submit
+    .loader

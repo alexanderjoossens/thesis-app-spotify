@@ -1,0 +1,19 @@
+{
+  "name": "spotify-app-thesis",
+  "version": "1.0.0",
+  "description": "spotify app with playlists",
+  "main": "database_functionality.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "node-fetch": "^3.3.0",
+    "pug": "^3.0.2"
+  }
+}

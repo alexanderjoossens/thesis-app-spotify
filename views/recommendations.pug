@@ -1,0 +1,29 @@
+extends layout.pug
+    
+block content
+  each playlist in playlists
+    h1 Recommendations for playlists #{playlist_names}
+    table 
+      each t of rec_tracks
+        tr 
+          - var artist_name = t.artists[0].name
+          - var track_name = t.name
+          - var track_preview = t.preview_url
+
+          td #{artist_name}
+          td #{track_name}
+          td: a(href=track_preview) Preview
+
+    //- table 
+    //-   each t in tracks
+    //-     - console.log(t)
+    //-       tr 
+    //-         - var artist_name = t.artists[0].name
+    //-         - var track_name = t.name
+    //-         - var track_preview = t.preview_url
+
+    //-         td #{artist_name}
+    //-         td #{track_name}
+    //-         td: a(href=track_preview) Preview
+
+    

@@ -1,0 +1,34 @@
+html
+  head
+    script(src='/js/script.js' defer='')
+    link(rel='stylesheet' href='/stylesheet/style.css')
+
+    //- link(rel='stylesheet' href='https://sp-bootstrap.global.ssl.fastly.net/8.0.0/sp-bootstrap.min.css')
+
+  body
+    header_infopage How does it work?
+    .pinfo 
+      | Imagine you want to create a 
+      span(style="font-weight:700; font-size:3vh") common playlist
+      |  with a friend for a party. So you want to
+      span(style="font-weight:700; font-size:3vh")  mix 
+      |  both
+      span(style="font-weight:700; font-size:3vh")  your party playlists
+      |  , and the 
+      span(style="font-weight:700; font-size:3vh")  party playlists of your friend
+      | . With this application, you can 
+      span(style="font-weight:700; font-size:3vh")  select
+      |  some of your own favorite playlists, and based on this, a 
+      span(style="font-weight:700; font-size:3vh")  new playlist
+      |  will 
+      span(style="font-weight:700; font-size:3vh")  automatically be generated 
+      | for you and your friend! All the steps speak for itself, you will also get an explanation afterwards.
+    .pinfo This application is part of the Thesis of Alexander Joossens. Thank you very much for helping me with my research!
+    form(action='/info', method='POST')
+      .login_button
+        button(type='submit', id="info_button", style="font-size:3vh;padding:2vh;") Let's do it!
+      .loader
+    //- a(href='/authorize' style='font-size:30px; display:block;text-align:center;padding-top:50px;padding-bottom:50px;') Log in
+    img(src='/images/flyer_img.png' alt='flyer_img' style='display: block; margin-left:auto; margin-right: auto; width:45%;')
+    //.loader
+

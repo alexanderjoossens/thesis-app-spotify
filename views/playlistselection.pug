@@ -1,0 +1,64 @@
+extends layout.pug
+    
+block content
+  script(src='/js/script.js' defer='')
+
+  hh Welcome #{first_name}!
+    img(src=user.images[0].url, class='circular_image')
+  ttt Please select your favorite playlists: 
+  - var lengte = playlists.length
+  - var lijst = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+  - var i = 0
+  form(action='/playlistselection' method='POST')
+
+    each item in playlists
+      if i%3 == 0
+        .column1-style
+          - var playlist_name = item.name
+          - var playlist_images = item.images 
+          //- - var playlist_tracks = item.tracks
+          - var playlist_id = item.id
+
+          
+            label.v-checkbox
+              input(type="checkbox", name=playlist_id) 
+              .v-labelx
+
+            img(src=playlist_images[0].url, class='circular_image')
+            a(href='/playlist?playlist_id='+playlist_id+'&playlist_name='+playlist_name) #{" "+playlist_name}
+            - i++
+      
+      else if i%3 == 1
+        .column2-style
+          - var playlist_name = item.name
+          - var playlist_images = item.images 
+          //- - var playlist_tracks = item.tracks
+          - var playlist_id = item.id
+
+          
+            label.v-checkbox
+              input(type="checkbox", name=playlist_id) 
+              .v-label
+
+            img(src=playlist_images[0].url, class='circular_image')
+            a(href='/playlist?playlist_id='+playlist_id+'&playlist_name='+playlist_name) #{" "+playlist_name}
+            - i++
+      
+      else
+        .column3-style
+          - var playlist_name = item.name
+          - var playlist_images = item.images 
+          //- - var playlist_tracks = item.tracks
+          - var playlist_id = item.id
+
+          
+            label.v-checkbox
+              input(type="checkbox", name=playlist_id) 
+              .v-label
+
+            img(src=playlist_images[0].url, class='circular_image')
+            a(href='/playlist?playlist_id='+playlist_id+'&playlist_name='+playlist_name) #{" "+playlist_name}
+            - i++
+
+    button(type='submit') Submit
+    .loader
